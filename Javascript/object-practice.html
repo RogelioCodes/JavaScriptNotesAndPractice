@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <body>
+      <h1>THE TITLE OF YOUR WEBPAGE</h1>
+    </body>
+    <script>
+      let user = {
+        name: "John",
+        surname: "Smith",
+      };
+      // console.log(user.name);
+      user.name = "Pete";
+      //console.log(user.name);
+      delete user.name;
+      //console.log(user);
+      let chap = {};
+      //console.log(chap);
+
+      const isEmpty = function (obj) {
+        for (let key in obj) {
+          return false;
+        }
+        return true;
+      };
+
+      let salaries = {
+        John: 100,
+        Ann: 160,
+        Pete: 130,
+      };
+      const sumAll = function (obj) {
+        let sum = 0;
+        for (let key in salaries) {
+          sum += salaries[key];
+        }
+        return sum;
+      };
+
+      // before the call
+      let menu = {
+        width: 200,
+        height: 300,
+        title: "My menu",
+      };
+
+      const multiplyNumeric = function (obj) {
+        for (let key in obj) {
+          if (typeof obj[key] === "number") obj[key] *= 2;
+        }
+      };
+
+      multiplyNumeric(menu);
+      console.log(menu);
+      //console.log(sumAll(salaries));
+      // console.log(isEmpty(chap));
+
+      // console.log(isEmpty(user));
+    </script>
+  </body>
+</html>

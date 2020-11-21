@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <body>
+      <h1>THE TITLE OF YOUR WEBPAGE</h1>
+      <div id="container"></div>
+
+      <button id="btn">Click Me</button>
+      <button id="btn2">Click Me Too</button>
+      <button onclick="alertFunction()">CLICK ME BABY</button>
+    </body>
+    <script>
+      const btn2 = document.querySelector("#btn2");
+      btn2.addEventListener("click", () => {
+        alert("Hello World");
+      });
+
+      function alertFunction() {
+        alert("YAY! YOU DID IT!");
+      }
+      btn2.addEventListener("click", function (e) {
+        console.log(e);
+      });
+      btn2.addEventListener("click", function (e) {
+        console.log(e.target);
+      });
+      btn2.addEventListener("click", function (e) {
+        e.target.style.background = "blue";
+      });
+      // METHOD 2
+      btn.onclick = alertFunction;
+
+      // METHOD 3
+      btn.addEventListener("click", alertFunction);
+      // buttons is a node list. It looks and acts much like an array.
+      const buttons = document.querySelectorAll("button");
+      // we use the .forEach method to iterate through each button
+      buttons.forEach((button) => {
+        // and for each one we add a 'click' listener
+        button.addEventListener("click", () => {
+          alert("ALLLLLL");
+        });
+      });
+      const container = document.querySelector("#container");
+
+      const content = document.createElement("div");
+      content.classList.add("content");
+      content.textContent = "This is the glorious text-content!";
+
+      container.appendChild(content);
+
+      const para = document.createElement("p"); //create <p>
+      para.classList.add("para"); //add class = "para"
+      para.textContent = "Wassup bitches!"; //text = wassup
+      para.style.color = "red";
+      document.body.appendChild(para); //push to body!
+
+      const h = document.createElement("h3");
+      h.classList.add("h_class");
+      h.textContent = "Wassup! I'm h3!";
+      h.style.color = "blue";
+      document.body.appendChild(h);
+
+      const container2 = document.createElement("div");
+      container2.classList.add("container2_class");
+      container2.textContent = "I am container2";
+      container2.style.border = "solid";
+      container2.style.color = "black";
+      container2.style.borderColor = "black";
+      container2.style.backgroundColor = "pink";
+      container2.style.display = "flex";
+      container2.style.justifyContent = "center";
+      container2.style.alignItems = "center";
+      container2.style.flexFlow = "column";
+      document.body.appendChild(container2);
+
+      const h1 = document.createElement("h1");
+      h1.classList.add("h1_class");
+      h1.textContent = "I'm in a div!";
+      container2.appendChild(h1);
+
+      const para2 = document.createElement("p");
+      para2.classList.add("para2_class");
+      para2.textContent = "ME TOO!";
+      container2.appendChild(para2);
+    </script>
+  </body>
+</html>
